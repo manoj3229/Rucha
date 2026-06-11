@@ -3,9 +3,10 @@ Library     Collections
 
 *** Variables ***
 ${val}  23
-${String}   "Rucha"   
-${Str}  "aaabbc"  
-${palindromStr} "madam"
+${String}   Rucha  
+${Str}  aaabbc  
+${pal}  madam
+
 
 
 *** Test Cases ***
@@ -39,9 +40,9 @@ Find largest number by sorting
     Log To Console  ${large}
 
 Palindrome Check
-    ${rev}=     Evaluate   "${palindromStr}"[::-1]
+    ${rev}=     Evaluate        "${pal}"[::-1]
     
-    IF      '${palindromStr}'=='${rev}' 
+    IF      '${pal}'=='${rev}' 
         Log To Console      Palindrome
     ELSE
         Log To Console      Not Palindrome
