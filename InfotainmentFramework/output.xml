@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.12 on win32)" generated="2026-05-28T17:26:46.461156" rpa="false" schemaversion="5">
+<suite id="s1" name="Practice" source="D:\Rucha\InfotainmentFramework\tests\Practice.robot">
+<test id="s1-t1" name="Even or Odd" line="9">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-28T17:26:46.519453" level="INFO">${result} = 1</msg>
+<var>${result}</var>
+<arg>${val} % 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-28T17:26:46.519018" elapsed="0.000491"/>
+</kw>
+<if>
+<branch type="IF" condition="${result} == 0">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${val} is Even</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-05-28T17:26:46.519984" elapsed="0.000021"/>
+</kw>
+<status status="NOT RUN" start="2026-05-28T17:26:46.519755" elapsed="0.000287"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${val} is Odd</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-05-28T17:26:46.520141" elapsed="0.000315"/>
+</kw>
+<status status="PASS" start="2026-05-28T17:26:46.520069" elapsed="0.000425"/>
+</branch>
+<status status="PASS" start="2026-05-28T17:26:46.519725" elapsed="0.000794"/>
+</if>
+<status status="PASS" start="2026-05-28T17:26:46.518299" elapsed="0.002423"/>
+</test>
+<test id="s1-t2" name="Reverse the String" line="19">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-28T17:26:46.521699" level="INFO">${reverse} = ahcuR</msg>
+<var>${reverse}</var>
+<arg>"${String}"[::-1]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-28T17:26:46.521374" elapsed="0.000352"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${reverse}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-05-28T17:26:46.521880" elapsed="0.000297"/>
+</kw>
+<status status="PASS" start="2026-05-28T17:26:46.521060" elapsed="0.001306"/>
+</test>
+<test id="s1-t3" name="Count characters in String" line="23">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-28T17:26:46.523399" level="INFO">${counter} = Counter({'a': 3, 'c': 2, 'b': 1})</msg>
+<var>${counter}</var>
+<arg>collections.Counter("${Str}")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-28T17:26:46.522965" elapsed="0.000465"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${counter}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-05-28T17:26:46.523611" elapsed="0.000334"/>
+</kw>
+<status status="PASS" start="2026-05-28T17:26:46.522693" elapsed="0.001397"/>
+</test>
+<test id="s1-t4" name="Find largest number" line="27">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-05-28T17:26:46.524941" level="INFO">@{list} = [ 10 | 20 | 67 | 80 | 30 | 3 | 90 ]</msg>
+<var>@{list}</var>
+<arg>10</arg>
+<arg>20</arg>
+<arg>67</arg>
+<arg>80</arg>
+<arg>30</arg>
+<arg>3</arg>
+<arg>90</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-05-28T17:26:46.524637" elapsed="0.000333"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-28T17:26:46.525515" level="INFO">${largest} = 90</msg>
+<var>${largest}</var>
+<arg>max(@{list})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-28T17:26:46.525160" elapsed="0.000382"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${largest}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-05-28T17:26:46.525701" elapsed="0.000297"/>
+</kw>
+<status status="PASS" start="2026-05-28T17:26:46.524352" elapsed="0.001846"/>
+</test>
+<test id="s1-t5" name="Find largest number by sorting" line="32">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-05-28T17:26:46.527229" level="INFO">@{listToSort} = [ 10 | 50 | 55 | 60 | 80 | 157 | 85 ]</msg>
+<var>@{listToSort}</var>
+<arg>10</arg>
+<arg>50</arg>
+<arg>55</arg>
+<arg>60</arg>
+<arg>80</arg>
+<arg>157</arg>
+<arg>85</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-05-28T17:26:46.526897" elapsed="0.000360"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-28T17:26:46.527848" level="INFO">${newList} = [10, 50, 55, 60, 80, 85, 157]</msg>
+<var>${newList}</var>
+<arg>sorted([int(x) for x in ${listToSort}])</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-28T17:26:46.527457" elapsed="0.000440"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-05-28T17:26:46.528311" level="INFO">${large} = 157</msg>
+<var>${large}</var>
+<arg>${newList}</arg>
+<arg>-1</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-05-28T17:26:46.528084" elapsed="0.000254"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${large}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-05-28T17:26:46.528513" elapsed="0.000348"/>
+</kw>
+<status status="PASS" start="2026-05-28T17:26:46.526502" elapsed="0.002565"/>
+</test>
+<test id="s1-t6" name="Palindrome Check" line="38">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-05-28T17:26:46.530134" level="INFO">${rev} = amadam</msg>
+<var>${rev}</var>
+<arg>"${palindromStr}"[::-1]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-05-28T17:26:46.529756" elapsed="0.000406"/>
+</kw>
+<if>
+<branch type="IF" condition="'${palindromStr}'=='${rev}'">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Palindrome</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-05-28T17:26:46.530517" elapsed="0.000020"/>
+</kw>
+<status status="NOT RUN" start="2026-05-28T17:26:46.530322" elapsed="0.000248"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Not Palindrome</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-05-28T17:26:46.530666" elapsed="0.000262"/>
+</kw>
+<status status="PASS" start="2026-05-28T17:26:46.530594" elapsed="0.000370"/>
+</branch>
+<status status="PASS" start="2026-05-28T17:26:46.530296" elapsed="0.000691"/>
+</if>
+<status status="PASS" start="2026-05-28T17:26:46.529399" elapsed="0.001734"/>
+</test>
+<status status="PASS" start="2026-05-28T17:26:46.463251" elapsed="0.068405"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Practice" id="s1" pass="6" fail="0" skip="0">Practice</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-05-28T17:26:46.463409" level="ERROR">Error in file 'D:\Rucha\InfotainmentFramework\tests\Practice.robot' on line 5: Setting variable '[Arguments]' failed: Invalid variable name '[Arguments]'.</msg>
+</errors>
+</robot>

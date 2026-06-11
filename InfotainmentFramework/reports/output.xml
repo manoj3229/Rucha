@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.12 on win32)" generated="2026-05-19T16:49:45.593417" rpa="false" schemaversion="5">
+<suite id="s1" name="Bluetooth Test" source="D:\Rucha\InfotainmentFramework\tests\bluetooth_test.robot">
+<test id="s1-t1" name="Bluetooth Validation Test" line="6">
+<kw name="Validate Device Connection" owner="bluetooth_keywords">
+<kw name="Check Device Connection" owner="BluetoothLibrary">
+<msg time="2026-05-19T16:49:45.789441" level="INFO">ADB Devices Output:
+List of devices attached
+2B071FDH200424	device
+
+Connected Devices: ['2B071FDH200424']</msg>
+<msg time="2026-05-19T16:49:45.789720" level="INFO">${device} = 2B071FDH200424</msg>
+<var>${device}</var>
+<status status="PASS" start="2026-05-19T16:49:45.685637" elapsed="0.104151"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-05-19T16:49:45.791541" level="INFO">Connected Device: 2B071FDH200424</msg>
+<arg>Connected Device: ${device}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-05-19T16:49:45.790101" elapsed="0.001565"/>
+</kw>
+<status status="PASS" start="2026-05-19T16:49:45.684782" elapsed="0.107052"/>
+</kw>
+<kw name="Turn ON Bluetooth" owner="bluetooth_keywords">
+<kw name="Enable Bluetooth" owner="BluetoothLibrary">
+<msg time="2026-05-19T16:49:51.176002" level="INFO">Enabling Bluetooth...
+Bluetooth enable command executed</msg>
+<status status="PASS" start="2026-05-19T16:49:45.794305" elapsed="5.381889"/>
+</kw>
+<status status="PASS" start="2026-05-19T16:49:45.793810" elapsed="5.382560"/>
+</kw>
+<kw name="Validate Bluetooth Enabled" owner="bluetooth_keywords">
+<kw name="Verify Bluetooth Status" owner="BluetoothLibrary">
+<msg time="2026-05-19T16:49:51.346549" level="INFO">Verifying Bluetooth Status...
+Bluetooth Raw Status: 1
+Bluetooth is ENABLED</msg>
+<msg time="2026-05-19T16:49:51.346815" level="INFO">${status} = enabled</msg>
+<var>${status}</var>
+<status status="PASS" start="2026-05-19T16:49:51.178301" elapsed="0.168579"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status}</arg>
+<arg>${EXPECTED_STATUS}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-05-19T16:49:51.347146" elapsed="0.000871"/>
+</kw>
+<status status="PASS" start="2026-05-19T16:49:51.177712" elapsed="0.170458"/>
+</kw>
+<kw name="Capture Device Logs" owner="bluetooth_keywords">
+<kw name="Capture Logcat" owner="BluetoothLibrary">
+<msg time="2026-05-19T16:49:51.714502" level="INFO">Capturing Logcat...
+Logs saved to logs/bluetooth_log.txt</msg>
+<status status="PASS" start="2026-05-19T16:49:51.349361" elapsed="0.365281"/>
+</kw>
+<status status="PASS" start="2026-05-19T16:49:51.348766" elapsed="0.365990"/>
+</kw>
+<kw name="Turn OFF Bluetooth" owner="bluetooth_keywords">
+<kw name="Disable Bluetooth" owner="BluetoothLibrary">
+<msg time="2026-05-19T16:49:55.032112" level="INFO">Disabling Bluetooth...
+Bluetooth disabled</msg>
+<status status="PASS" start="2026-05-19T16:49:51.715807" elapsed="3.316465"/>
+</kw>
+<status status="PASS" start="2026-05-19T16:49:51.715228" elapsed="3.317184"/>
+</kw>
+<doc>Validate infotainment Bluetooth flow</doc>
+<tag>bluetooth</tag>
+<tag>regression</tag>
+<status status="PASS" start="2026-05-19T16:49:45.683691" elapsed="9.349292"/>
+</test>
+<status status="PASS" start="2026-05-19T16:49:45.595906" elapsed="9.438573"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">bluetooth</stat>
+<stat pass="1" fail="0" skip="0">regression</stat>
+</tag>
+<suite>
+<stat name="Bluetooth Test" id="s1" pass="1" fail="0" skip="0">Bluetooth Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
