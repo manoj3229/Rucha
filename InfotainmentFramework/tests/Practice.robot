@@ -2,7 +2,10 @@
 Library     Collections
 
 *** Variables ***
-[Arguments]     ${val}  ${String}   ${Str}  ${palindromStr}
+${val}  23
+${String}   "Rucha"   
+${Str}  "aaabbc"  
+${palindromStr} "madam"
 
 
 *** Test Cases ***
