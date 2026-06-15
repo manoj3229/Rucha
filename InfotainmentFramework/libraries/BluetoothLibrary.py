@@ -1,6 +1,8 @@
 import subprocess
 import time
+import os
 
+ADB_PATH = r"C:\Users\lenovo\AppData\Local\Android\Sdk\platform-tools\adb.exe"
 
 class BluetoothLibrary:
 
@@ -21,7 +23,7 @@ class BluetoothLibrary:
 
     def check_device_connection(self):
 
-        output = self.execute_command("adb devices")
+        output = self.execute_command(f'"{ADB_PATH}" devices')
 
         print("\nADB Devices Output:")
         print(output)
@@ -51,16 +53,12 @@ class BluetoothLibrary:
 
         print("\nEnabling Bluetooth...")
 
-        command = (
-            "adb shell settings put global bluetooth_on 1"
-        )
+        command = ( f'"{ADB_PATH}" shell settings put global bluetooth_on 1')
 
         self.execute_command(command)
 
         # Wake Bluetooth service
-        self.execute_command(
-            "adb shell am start -a android.bluetooth.adapter.action.REQUEST_ENABLE"
-        )
+        self.execute_command( f'"{ADB_PATH}" shell am start -a android.bluetooth.adapter.action.REQUEST_ENABLE' )
 
         time.sleep(5)
 
@@ -74,9 +72,7 @@ class BluetoothLibrary:
 
         print("\nVerifying Bluetooth Status...")
 
-        command = (
-            "adb shell settings get global bluetooth_on"
-        )
+        command = ( f'"{ADB_PATH}" shell settings get global bluetooth_on'  )
 
         output = self.execute_command(command)
 
@@ -96,11 +92,9 @@ class BluetoothLibrary:
 
     def capture_logcat(self):
 
-        print("\nCapturing Logcat...")
+        os.makedirs("logs", exist_ok=True)
 
-        command = (
-            "adb logcat -d > logs/bluetooth_log.txt"
-        )
+        command = (f'"{ADB_PATH}" logcat -d > logs\\bluetooth_log.txt')
 
         subprocess.run(command, shell=True)
 
@@ -114,9 +108,7 @@ class BluetoothLibrary:
 
         print("\nDisabling Bluetooth...")
 
-        command = (
-            "adb shell settings put global bluetooth_on 0"
-        )
+        command = (f'"{ADB_PATH}" shell settings put global bluetooth_on 0')
 
         self.execute_command(command)
 
